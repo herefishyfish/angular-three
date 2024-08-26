@@ -100,6 +100,7 @@
     "vitest": "1.6.0",
     "vitest-webgl-canvas-mock": "^1.1.0",
     "sass": "^1.32.0",
+    "@nativescript/nx": "^19.0.0",
     "@nativescript/webpack": "~5.0.0",
     "@nativescript/types": "~8.7.0",
     "@ngtools/webpack": "^18.0.0"
@@ -127,7 +128,7 @@
     "@nativescript/canvas": "2.0.0-webgpu.27",
     "@nativescript/canvas-media": "2.0.0-webgpu.27",
     "@nativescript/canvas-three": "2.0.0-webgpu.27",
-    "@nativescript/nx": "^19.0.0",
+    "@nativescript/canvas-polyfill": "2.0.0-webgpu.27",
     "@pmndrs/cannon-worker-api": "^2.4.0",
     "@pmndrs/vanilla": "^1.19.1",
     "@swc/helpers": "0.5.12",

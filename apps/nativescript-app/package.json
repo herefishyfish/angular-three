@@ -7,7 +7,12 @@
     "postinstall": "node ./tools/postinstall.js"
   },
   "dependencies": {
-    "@nativescript/core": "*"
+    "@nativescript/core": "*",
+    "@nativescript/canvas": "*",
+    "@nativescript/canvas-media": "*",
+    "@nativescript/canvas-three": "*",
+    "@nativescript/canvas-polyfill": "*",
+    "@nativescript-community/ui-pager": "14.1.25"
   },
   "devDependencies": {
     "@nativescript/android": "~8.7.0",

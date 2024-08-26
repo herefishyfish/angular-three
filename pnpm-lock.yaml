@@ -71,15 +71,15 @@ importers:
       '@nativescript/canvas-media':
         specifier: 2.0.0-webgpu.27
         version: 2.0.0-webgpu.27
+      '@nativescript/canvas-polyfill':
+        specifier: 2.0.0-webgpu.27
+        version: 2.0.0-webgpu.27
       '@nativescript/canvas-three':
         specifier: 2.0.0-webgpu.27
         version: 2.0.0-webgpu.27
       '@nativescript/core':
         specifier: ~8.7.0
         version: 8.7.3
-      '@nativescript/nx':
-        specifier: ^19.0.0
-        version: 19.0.0(@babel/traverse@7.25.3)(@swc-node/register@1.10.9(@swc/core@1.7.11(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.7.11(@swc/helpers@0.5.12))(@types/node@20.14.12)(chokidar@3.6.0)(nx@19.6.1(@swc-node/register@1.10.9(@swc/core@1.7.11(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.7.11(@swc/helpers@0.5.12)))(ts-node@10.9.2(@swc/core@1.7.11(@swc/helpers@0.5.12))(@types/node@20.14.12)(typescript@5.5.4))(typescript@5.5.4)
       '@pmndrs/cannon-worker-api':
         specifier: ^2.4.0
         version: 2.4.0(three@0.167.1)
@@ -225,6 +225,9 @@ importers:
       '@chromatic-com/storybook':
         specifier: ^1
         version: 1.6.1(react@18.3.1)
+      '@nativescript/nx':
+        specifier: ^19.0.0
+        version: 19.0.0(@babel/traverse@7.25.3)(@swc-node/register@1.10.9(@swc/core@1.7.11(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.7.11(@swc/helpers@0.5.12))(@types/node@20.14.12)(chokidar@3.6.0)(nx@19.6.1(@swc-node/register@1.10.9(@swc/core@1.7.11(@swc/helpers@0.5.12))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.7.11(@swc/helpers@0.5.12)))(ts-node@10.9.2(@swc/core@1.7.11(@swc/helpers@0.5.12))(@types/node@20.14.12)(typescript@5.5.4))(typescript@5.5.4)
       '@nativescript/types':
         specifier: ~8.7.0
         version: 8.7.0
