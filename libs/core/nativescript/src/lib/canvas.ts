@@ -2,58 +2,56 @@ import '@nativescript/canvas-three';
 
 import { DOCUMENT } from '@angular/common';
 import {
-	booleanAttribute,
-	ChangeDetectionStrategy,
-	Component,
-	ComponentRef,
-	createEnvironmentInjector,
-	DestroyRef,
-	EnvironmentInjector,
-	inject,
-	Injector,
-	input,
-	NgZone,
-	NO_ERRORS_SCHEMA,
-	output,
-	Type,
-	untracked,
-	viewChild,
-	ViewContainerRef,
+  booleanAttribute,
+  ComponentRef,
+  createEnvironmentInjector,
+  DestroyRef,
+  Directive,
+  EnvironmentInjector,
+  inject,
+  Injector,
+  input,
+  NgZone,
+  output,
+  Type,
+  untracked,
+  viewChild,
+  ViewContainerRef
 } from '@angular/core';
 import { registerElement } from '@nativescript/angular';
 import { Canvas } from '@nativescript/canvas';
+import { CSSType } from '@nativescript/core';
 import {
-	injectCanvasRootInitializer,
-	injectStore,
-	makeDpr,
-	NgtCanvasConfigurator,
-	NgtCanvasOptions,
-	NgtDpr,
-	NgtGLOptions,
-	NgtPerformance,
-	NgtRoutedScene,
-	NgtSize,
-	NgtState,
-	provideNgtRenderer,
-	provideStore,
+  injectCanvasRootInitializer,
+  injectStore,
+  makeDpr,
+  NgtCanvasConfigurator,
+  NgtCanvasOptions,
+  NgtDpr,
+  NgtGLOptions,
+  NgtPerformance,
+  NgtRoutedScene,
+  NgtSize,
+  NgtState,
+  provideNgtRenderer,
+  provideStore,
 } from 'angular-three';
 import { Raycaster, Scene, Vector3, WebGLRenderer } from 'three';
 
-registerElement('Canvas', () => Canvas);
+registerElement('NgtCanvas', () => NgtCanvasNative);
 
-@Component({
+@CSSType('NgtCanvas')
+@Directive({
 	selector: 'NgtCanvas',
 	standalone: true,
-	template: `
-		<GridLayout>
-			<Canvas #canvas style="width: 100%; height: auto" (ready)="onReady($event)"></Canvas>
-		</GridLayout>
-	`,
+  host: {
+    'style.width': '100%',
+    'style.height': 'auto',
+    '(ready)': 'onReady($event)',
+  },
 	providers: [{ provide: DOCUMENT, useValue: document }, provideStore()],
-	schemas: [NO_ERRORS_SCHEMA],
-	changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class NgtCanvasNative {
+export class NgtCanvasNative extends Canvas {
 	sceneGraph = input.required<Type<any>, Type<any> | 'routed'>({
 		transform: (value) => {
 			if (value === 'routed') return NgtRoutedScene;
@@ -95,6 +93,7 @@ export class NgtCanvasNative {
 	private glRef?: ComponentRef<any>;
 
 	constructor() {
+    super();
 		this.destroyRef.onDestroy(() => {
 			this.glRef?.destroy();
 			this.glEnvironmentInjector?.destroy();
